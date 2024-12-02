@@ -25,3 +25,27 @@ out
 dist
 .aider*
 extensions/*
+
+# Security
+*.key
+*.pem
+*secret*
+*password*
+*.log.*
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# Additional Security Patterns
+**/.env.*
+**/*.secret.*
+**/*.private.*
+**/*.backup
+**/*.bak
+**/*credentials*
+**/*confidential*

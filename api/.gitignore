@@ -25,3 +25,25 @@ out
 dist
 .aider*
 extensions/*
+
+# Security
+*.key
+*.pem
+*secret*
+*password*
+*.log.*
+
+# IDE
+.vscode/
+
+# Certificates and Keys
+certs/
+*.crt
+*.key
+*.p12
+*.pfx
+
+# Logs and Debugging
+debug/
+*.debug
+crash-reports/

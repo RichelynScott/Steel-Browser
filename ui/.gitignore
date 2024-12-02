@@ -23,3 +23,25 @@ dist-ssr
 *.sln
 *.sw?
 .env.local
+
+# Security
+*.key
+*.pem
+*secret*
+*password*
+*.log.*
+
+# Additional Build
+.cache/
+.temp/
+.tmp/
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+
+# Environment
+.env.*
+!.env.example
+!.env.local.example
