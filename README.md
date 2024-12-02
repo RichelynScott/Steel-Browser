@@ -1,72 +1,28 @@
-<br />
 <p align="center">
-<a href="https://steel.dev">
-  <img src="images/steel_header_logo.png" alt="Steel Logo" width="100">
-</a>
+  <a href="https://steel.dev"><img src="https://api.scalar.com/cdn/images/jBw8j7D0nDuWr2AD2vuO5/D-Yt182xdIQAAQph6XjuT.png" alt="Steel logo" width="100%"></a>
 </p>
 
-
-
-<h3 align="center"><b>Steel</b></h3>
 <p align="center">
-    <b>The open-source browser API for AI agents & apps.</b> <br />
+    <b>Steel Browser - the open-source browser for agents</b>. <br />
     The best way to build live web agents and browser automation tools.
 </p>
 
-<div align="center">
-  
-[![Commit Activity](https://img.shields.io/github/commit-activity/m/steel-dev/steel-browser?color=yellow)](https://github.com/steel-dev/steel-browser/commits/main)
-[![License](https://img.shields.io/github/license/steel-dev/steel-browser?color=yellow)](https://github.com/steel-dev/steel-browser/blob/main/LICENSE)
-[![Discord](https://img.shields.io/discord/1285696350117167226?label=discord)](https://discord.gg/gPpvhNvc5R)
-[![Twitter Follow](https://img.shields.io/twitter/follow/steeldotdev)](https://twitter.com/steeldotdev)
-[![GitHub stars](https://img.shields.io/github/stars/steel-dev/steel-browser)](https://github.com/steel-dev/steel-browser)
-
-</div>
-
-<h4 align="center">
-    <a href="https://app.steel.dev/sign-up" target="_blank">
-      Get Started
-  </a>  ·
-    <a href="https://docs.steel.dev/" target="_blank">
-      Documentation
-  </a>  ·
-  <a href="https://steel.dev/" target="_blank">
-      Website
-  </a> ·
-  <a href="https://github.com/steel-dev/steel-cookbook" target="_blank">
-      Cookbook
-  </a>
-</h4>
-
 <p align="center">
-  <img src="images/demo.gif" alt="Steel Demo" width="600">
+  <a href="https://github.com/chroma-core/chroma/blob/master/LICENSE" target="_blank">
+      <img src="https://img.shields.io/static/v1?label=license&message=Apache%202.0&color=white" alt="License">
+  </a> |
+  <a href="https://steel.dev/" target="_blank">
+      Docs
+  </a> |
+  <a href="https://steel.dev/" target="_blank">
+      Homepage
+  </a>
 </p>
 
-[Steel.dev](https://steel.dev) is an open-source browser API that makes it easy to build AI apps and agents that interact with the web. Instead of building automation infrastructure from scratch, you can focus on your AI application while Steel handles the complexity.
+## Features
 
-**This repo is the core building block behind Steel - a production-ready, containerized browser sandbox that you can deploy anywhere.** It includes built-in stealth capabilities, text-to-markdown session management, UI to view/debug sessions, and full browser control through standard automation frameworks like Puppeteer, Playwright, and Selenium 🔥
+The Steel browser provides a REST API to control a headless browser powered by Puppeteer. Under the hood, it manages browser instances, sessions, and pages, allowing you to perform complex browsing tasks programmatically without any of the headaches:
 
-> Steel is in public beta and evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on [Discord](https://discord.gg/gPpvhNvc5R) or raise a GitHub issue. We read everything, respond to most, and love you.
-
-
-
-## ⚡ Installation
-
-The easiest way to get started with Steel is by creating a [Steel Cloud](https://app.steel.dev) account.
-
-
-
-| Installation methods | Link                                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Run locally with GHCR | [![Deploy with Github Container Redistry](https://img.shields.io/badge/GHCR-478CFF?style=for-the-badge&labelColor=478CFF&logo=github&logoColor=white)](https://github.com/steel-dev/steel-browser/pkgs/container/steel-browser) |
-| 1-click deploy to Railway | [![Deploy on Railway](https://img.shields.io/badge/Railway-B039CB?style=for-the-badge&labelColor=B039CB&logo=railway&logoColor=white)](https://railway.app/template/FQG9Ca) |
-| 1-click deploy to Render | [![Deploy to Render](https://img.shields.io/badge/Render-8A05FF?style=for-the-badge&labelColor=8A05FF&logo=render&logoColor=white)](https://render.com/deploy?repo=https://github.com/steel-dev/steel-browser) |
-
-
-
-## ✨ Highlights 
-
-The `steel-browser` provides a REST API to control, run, and manage a production-ready browser environment. Under the hood, it manages browser instances, sessions, and pages, allowing you to perform complex browsing tasks programmatically without any of the headaches:
 - **Full Browser Control**: Uses Puppeteer and CDP for complete control over Chrome instances -- allowing you to connect using Puppeteer, Playwright, or Selenium.
 - **Session Management**: Maintains browser state, cookies, and local storage across requests
 - **Proxy Support**: Built-in proxy chain management for IP rotation
@@ -74,30 +30,25 @@ The `steel-browser` provides a REST API to control, run, and manage a production
 - **Debugging Tools**: Built-in request logging and session recording capabilities
 - **Anti-Detection**: Includes stealth plugins and fingerprint management
 - **Resource Management**: Automatic cleanup and browser lifecycle management
-- **Browser Tools**: Exposes APIs to quick convert pages to markdown, readability, screenshots, or PDFs.
 
 
-For detailed API documentation and examples, check out our [API reference](https://docs.steel.dev/api-reference) or explore the Swagger UI directly at `http://0.0.0.0:3000/documentation`.
-
-
-### Make sure to give us a star ⭐
-
-<img width="200" alt="Start us on Github!" src="images/star_img.png">
+For detailed API documentation and examples, check out our [API reference](https://steel.dev/api) or explore the Swagger UI directly at `http://localhost:3000/documentation`.
 
 
 
-## Getting Started
-
+### Getting Started
 The fastest way to get started is to build and run the Docker image:
 
 ```bash
 # Clone and build the Docker image
-git clone https://github.com/steel-dev/steel-browser
-cd steel-browser
+git clone https://github.com/steel-dev/browser
+cd browser
 docker build -t steel .
 
+# On an M chip Mac, you may need to run `docker build --platform linux/amd64 .`
+
 # Run the server
-docker run -p 3000:3000 -p 5173:5173 -p 9223:9223 steel
+docker run -p 3000:3000 steel
 ```
 
 Alternatively, if you have Node.js and Chrome installed, you can run the server directly:
@@ -124,10 +75,8 @@ Make sure you have the Chrome executable installed and in one of these paths:
 
 For more details on where this is checked look at [`src/server/utils/browser.ts`](./src/server/utils/browser.ts).
 
-## Usage
+## How It Works
 The Steel browser provides a REST API to control a headless browser powered by Puppeteer. Under the hood, it manages browser instances, sessions, and pages, allowing you to perform complex browsing tasks programmatically.
-
-The full REST API documentation can be found on your Steel instance at `/documentation` (e.g., `http://0.0.0.0:3000/documentation`).
 
 Steel provides three main ways to let your agents do browser automation:
 
@@ -138,7 +87,7 @@ The `/scrape`, `/screenshot`, and `/pdf` endpoints let you quickly extract clean
 Extract the HTML content of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://0.0.0.0:3000/v1/scrape \
+curl -X POST http://localhost:3000/scrape \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -150,7 +99,7 @@ curl -X POST http://0.0.0.0:3000/v1/scrape \
 Take a screenshot of a web page.
 ```bash
 # Example using the Actions API
-curl -X POST http://0.0.0.0:3000/v1/screenshot \
+curl -X POST http://localhost:3000/screenshot \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://example.com",
@@ -163,7 +112,7 @@ The Browser Sessions API lets you relaunch the browser with custom options or ex
 
 ```bash
 # Launch a new browser session
-curl -X POST http://0.0.0.0:3000/v1/sessions \
+curl -X POST http://localhost:3000/launch-browser \
   -H "Content-Type: application/json" \
   -d '{
     "options": {
@@ -180,7 +129,7 @@ For teams with existing Selenium workflows, the Steel browser provides a drop-in
 
 ```bash
 # Launch a Selenium session
-curl -X POST http://0.0.0.0:3000/v1/selenium/launch \
+curl -X POST http://localhost:3000/selenium/launch \
   -H "Content-Type: application/json" \
   -d '{
     "options": {
@@ -196,7 +145,7 @@ The Selenium API is fully compatible with Selenium's WebDriver protocol, so you 
 const builder = new Builder()
       .forBrowser("chrome")
       .usingServer(
-        `http://0.0.0.0:3000/selenium`
+        `http://localhost:3000/selenium`
       );
 
 const driver = await builder.build();
@@ -207,10 +156,34 @@ await driver.get("https://www.google.com");
 // The rest of your Selenium code here...
 ```
 
+## Use Case: LLMs Interacting with the Web
+
+The browser is designed for AI agents that need to interact with the web. Whether you're building an AI that gathers information, automates tasks, or analyzes web content, Steel provides the tools to navigate and manipulate web pages programmatically.
+
+
+### Example: AI-Powered Web Scraping
+
+An AI agent can use the Steel browser to scrape dynamic content from web pages, even those requiring JavaScript execution. With Steel's simple API, the agent can:
+
+- Navigate to a target URL
+- Execute arbitrary JavaScript to interact with page elements
+- Extract information from the page in a variety of formats (HTML, JSON, PDF, etc.)
+
+
+### Example: Automated Form Submission
+
+
+1. **Launch a Browser Session**: Start a new browser session to maintain state.
+2. **Navigate to the Form Page**: Using Puppeteer or Playwright, navigate to the form page.
+3. **Fill Out the Form**: Programmatically interact with form elements.
+4. **Submit the Form**: Trigger form submission and handle the response.
+
 ## Get involved
 The Steel browser is an open-source project, and we welcome contributions!
-- Questions/ideas/feedback? Come hangout on [Discord](https://discord.gg/gPpvhNvc5R)
-- Found a bug? Open an issue on [GitHub](https://github.com/steel-dev/steel-browser/issues)
+- [Join the conversation on Discord](https://discord.gg/gPpvhNvc5R) - `#contributing` channel
+- [Review the 🛣️ Roadmap and contribute your ideas](https://steel.dev/roadmap)
+- [Grab an issue and open a PR](https://github.com/steel-dev/browser) - [`Good first issue tag`](https://github.com/steel-dev/browser/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- [Read our contributing guide](https://steel.dev/contributing)
 
 ## License
 [Apache 2.0](./LICENSE)
